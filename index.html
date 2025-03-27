@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator And MD5 Hash Generator</title>
+    <!-- style sheet  -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="password-generator.css">
+    <link rel="stylesheet" href="hash-generator.css">
+    <!-- font awesome cdn for icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- HOME TOGGLE BUTTON  -->
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="leftClick()">Password Generator App</button>
+            <button type="button" class="toggle-btn" onclick="rightClick()">MD5 Hash Generator App</button>
+        </div>
+    </div>
+    <!-- Password Generator App -->
+    <section id="password-generator-app">
+        <div class="pass-header">
+            <h1>Need a unique, secure password?</h1>
+            <h2>Instantly generate a secure, random password with the PassSnippet online tool</h2>
+        </div>
+        <div class="password-generator-container">
+            <div class="container">
+                <!-- 1 -->
+                <div class="password-generator">
+                    <p id="password-generator-heading">Customize password</p>
+                    <p id="para">Generate strong, unique passwords</p>
+                    <div class="range-input">
+                        <p class="characters"><output id="charvalue"></output> Characters</p>
+                        <input type="range" min="1" max="30" value="15" id="total-characters">
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkboxes">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="uppercase" style="height: 25px; width: 25px;"
+                                    checked="checked">
+                                <span>Capital letters</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="lowercase" style="height: 25px; width: 25px;">
+                                <span>Small letters</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="numbers" style="height: 25px; width: 25px;"
+                                    checked="checked">
+                                <span>Numbers</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="symbols" style="height: 25px; width: 25px;"
+                                    checked="checked">
+                                <span>Symbols</span>
+                            </label>
+                        </div>
+                        <div class="checkboxes-description">
+                            <span style="color: rgb(25, 149, 0);">ABC</span>
+                            <span style="color: rgb(255, 247, 0);">abc</span>
+                            <span style="color: rgb(255, 72, 0);">123</span>
+                            <span style="color: rgb(238, 0, 255);">@#$</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="generated-password">
+                    <span id="password">hdGbhjHJJnHH4vv6vTF65</span>
+                    <div class="btn">
+                        <button class="copy-btn"><i class="fa-solid fa-copy fa-lg"></i>
+                            Copy</button>
+                        <button class="regenerate-btn"><i class="fa-solid fa-repeat fa-lg"></i> Regenerate</button>
+                    </div>
+                    <hr>
+                    <p>Powered by Bhavi Digital</p>
+                </div>
+                <!-- 3 -->
+                <div class="more-passwords">
+                    <p>More Passwords</p>
+                    <div class="samplePass">
+                        <!-- <div class="random-password"> -->
+                        <!-- <span class="sampleTextPass">bjGvBH57vGTYGF5687</span>
+                            <i class="fa-solid fa-copy passIcon"></i> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="security-score">
+                    <div>
+                        <button id="secureBtn" class="good">Good!</button>
+                        <p id="security-msg"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- MD5 HASH GENERATOR APP -->
+    <section id="hash-generator-app" class="hide">
+        <div class="hash-header">
+            <h1>Security and protection for sensitive information!</h1>
+            <h2>This MD5 hash generator tool computes the unique identifier for a piece of a data.</h2>
+        </div>
+        <div class="hash-generator-container">
+            <div class="main-container">
+                <div class="input-string-box">
+                    <h3>Add text to be hashed using MD5</h3>
+                    <textarea id="hashString" name="hashString" rows="7" cols="75"></textarea>
+                    <button id="generateBtn">Generate</button>
+                </div>
+                <div class="generator-box">
+                    <h3>MD5 Checksum</h3>
+                    <span id="generated-hash"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <<<<<<<<<<<<< JAVASCRIPT FILES >>>>>>>>>>>>>>  -->
+    <!-- Password Generator App Script -->
+    <script src="password-generator.js"></script>
+    <!-- Toggle Btn Script  -->
+    <script src="toggle.js"></script>
+    <!-- MD5 HASH CDN  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <!-- MD5 Hash Generator App Script  -->
+    <script src="hash-generator.js"></script>
+</body>
+
+</html>
